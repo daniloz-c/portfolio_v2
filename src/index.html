@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danilo César | Tecnologia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'neo-bg': '#f3f4f6',
+                        'neo-black': '#0f0f0f',
+                        'neo-blue': '#00B6B7',
+                        'neo-dark-blue': '#00B6B7',
+                        'neo-lime': '#ccff00',
+                        'neo-white': '#ffffff',
+                        'neo-gray': '#e5e7eb'
+                    },
+                    fontFamily: {
+                        'sans': ['Archivo Black', 'sans-serif'],
+                        'mono': ['Space Mono', 'monospace'],
+                    },
+                    boxShadow: {
+                        'neo': '5px 5px 0px 0px rgba(15,15,15,1)',
+                        'neo-sm': '3px 3px 0px 0px rgba(15,15,15,1)',
+                        'neo-lg': '8px 8px 0px 0px rgba(15,15,15,1)',
+                        'neo-xl': '12px 12px 0px 0px rgba(15,15,15,1)',
+                    },
+                    animation: {
+                        'marquee': 'marquee 25s linear infinite',
+                        'stamp-pop': 'stampPop 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards',
+                    },
+                    keyframes: {
+                        stampPop: {
+                            '0%': { transform: 'scale(0) rotate(var(--rotation))' },
+                            '100%': { transform: 'scale(1) rotate(var(--rotation))' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="text-neo-black selection:bg-neo-blue selection:text-white relative">
+
+    <nav class="fixed w-full z-50 top-0 left-0 p-4 pointer-events-none">
+        <div class="max-w-7xl mx-auto flex justify-between items-start pointer-events-auto">
+            <a href="#"
+                class="btn-brutal bg-neo-blue text-white border-4 border-black px-4 py-2 shadow-neo font-sans text-xl md:text-2xl tracking-tighter z-50 transform -rotate-1">
+                DC_
+            </a>
+
+            <div class="hidden md:flex gap-4">
+                <a href="#projetos"
+                    class="btn-brutal bg-white border-4 border-black px-4 py-2 font-mono font-bold hover:bg-neo-lime shadow-neo">PROJETOS</a>
+                <a href="#artigos"
+                    class="btn-brutal bg-white border-4 border-black px-4 py-2 font-mono font-bold hover:bg-neo-lime shadow-neo">ARTIGOS</a>
+                <a href="#podcasts"
+                    class="btn-brutal bg-white border-4 border-black px-4 py-2 font-mono font-bold hover:bg-neo-lime shadow-neo">PODCASTS</a>
+                <a href="#skills"
+                    class="btn-brutal bg-white border-4 border-black px-4 py-2 font-mono font-bold hover:bg-neo-lime shadow-neo">STACK</a>
+                <a href="#contato"
+                    class="btn-brutal bg-black text-white border-4 border-black px-6 py-2 font-mono font-bold hover:bg-neo-blue shadow-neo">
+                    FALE COMIGO
+                </a>
+            </div>
+
+            <button id="menu-toggle"
+                class="md:hidden bg-white border-4 border-black p-2 shadow-neo active:shadow-none active:translate-x-[4px] active:translate-y-[4px] z-50"
+                aria-label="Abrir menu">
+                <i data-lucide="menu" class="w-8 h-8"></i>
+            </button>
+        </div>
+    </nav>
+
+    <div id="mobile-menu"
+        class="fixed inset-0 bg-neo-lime z-40 hidden-menu flex flex-col justify-center items-center gap-8 md:hidden border-l-4 border-black">
+        <a href="#projetos"
+            class="mobile-link text-4xl font-sans text-black hover:text-white transition-colors uppercase">Projetos</a>
+        <a href="#artigos"
+            class="mobile-link text-4xl font-sans text-black hover:text-white transition-colors uppercase">Artigos</a>
+        <a href="#podcasts"
+            class="mobile-link text-4xl font-sans text-black hover:text-white transition-colors uppercase">Podcasts</a>
+        <a href="#skills"
+            class="mobile-link text-4xl font-sans text-black hover:text-white transition-colors uppercase">Stack</a>
+        <a href="#contato"
+            class="mobile-link text-4xl font-sans text-black hover:text-white transition-colors uppercase">Contato</a>
+        <div class="mt-8 flex gap-4">
+            <a href="https://github.com/daniloz-c" target="_blank" rel="noopener noreferrer"
+                class="p-3 bg-white border-4 border-black shadow-neo active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all"><i
+                    data-lucide="github" class="w-6 h-6"></i></a>
+        </div>
+    </div>
+
+    <header
+        class="pt-24 pb-16 px-4 md:pt-48 md:pb-24 container mx-auto max-w-7xl relative min-h-[95vh] flex flex-col justify-center overflow-hidden">
+
+        <div class="draggable bg-neo-lime border-4 border-black px-3 py-1 font-mono font-bold text-xs md:text-base shadow-neo top-10 left-2 md:top-24 md:left-10"
+            style="transform: rotate(-6deg);">FULLSTACK</div>
+
+                <div class="flex flex-col lg:flex-row gap-8 md:gap-12 items-start relative z-10 pointer-events-none">
+            <div class="flex-1 flex flex-col gap-4 md:gap-6 pointer-events-auto">
+                <div
+                    class="reveal inline-flex items-center gap-2 w-fit bg-black text-white px-3 py-1 md:px-4 md:py-2 font-mono text-xs md:text-base font-bold transform -rotate-2 shadow-neo-sm border-2 border-white">
+                    <i data-lucide="terminal" class="w-3 h-3 md:w-4 md:h-4"></i> HELLO_WORLD
+                </div>
+
+                <h1 class="reveal fluid-text font-sans uppercase break-words delay-100 leading-[0.85]">
+                    DANILO<br><span class="text-neo-blue">CÉSAR</span>
+                </h1>
+
+                <div
+                    class="reveal bg-white border-4 border-black p-4 md:p-6 shadow-neo max-w-2xl relative delay-200 group hover:shadow-neo-lg transition-shadow">
+                    <div
+                        class="absolute -top-3 -right-3 bg-neo-lime border-4 border-black px-2 py-1 font-mono text-[10px] md:text-xs font-bold transform rotate-3">
+                        IT GUY</div>
+                    <p class="font-mono text-base md:text-xl leading-relaxed">
+                        Atuo na área de Tecnologia da Informação com foco em <strong>Infraestrutura, Cloud e
+                            Cibersegurança</strong>. Certificação <strong>Microsoft AZ-900: Azure Fundamentals e AZ-800/01: Administering Windows Server Hybrid Core Infrastructure</strong>.
+                        Sou estudante de <strong>Análise e Desenvolvimento de Sistemas</strong>.
+                    </p>
+                </div>
+            </div>
+
+            <div class="w-full lg:w-[380px] relative reveal delay-500 flex justify-center lg:justify-end pointer-events-auto mt-8 lg:mt-0">
+                <div class="w-64 h-80 md:w-80 md:h-96 relative">
+                    <div
+                        class="absolute inset-0 bg-neo-blue border-4 border-black translate-x-3 translate-y-3 md:translate-x-4 md:translate-y-4">
+                    </div>
+                    <div
+                        class="absolute inset-0 bg-white border-4 border-black flex flex-col items-center justify-center overflow-hidden active:translate-x-1 active:translate-y-1 transition-transform cursor-pointer group">
+                        <div
+                            class="w-full h-full bg-gray-200 relative group-hover:scale-105 transition-transform duration-500">
+                            <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all"
+                                alt="Danilo César da Silva">
+                        </div>
+                        <div
+                            class="absolute bottom-0 w-full bg-black text-white p-2 font-mono text-center text-xs md:text-sm border-t-4 border-black">
+                            GIT: daniloz-c
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div
+        class="bg-black text-white border-y-4 border-black py-3 md:py-4 marquee-wrapper rotate-1 scale-105 transform origin-center my-8 md:my-10 z-20 relative overflow-hidden">
+        <div class="marquee-track">
+            <span class="font-sans text-2xl md:text-5xl uppercase font-bold px-4 text-neo-blue">NODE JS • </span>
+            <span class="font-sans text-2xl md:text-5xl uppercase font-bold px-4">INFRA • </span>
+            <span class="font-sans text-2xl md:text-5xl uppercase font-bold px-4 text-neo-lime">AD • </span>
+            <span class="font-sans text-2xl md:text-5xl uppercase font-bold px-4">HYPER-V • </span>
+            <span class="font-sans text-2xl md:text-5xl uppercase font-bold px-4 text-neo-blue">REACT • </span>
+            <span class="font-sans text-2xl md:text-5xl uppercase font-bold px-4">VUE JS • </span>
+        </div>
+       <div class="marquee-track">
+            <span class="font-sans text-2xl md:text-5xl uppercase font-bold px-4 text-neo-blue">NODE JS • </span>
+            <span class="font-sans text-2xl md:text-5xl uppercase font-bold px-4">INFRA • </span>
+            <span class="font-sans text-2xl md:text-5xl uppercase font-bold px-4 text-neo-lime">AD • </span>
+            <span class="font-sans text-2xl md:text-5xl uppercase font-bold px-4">HYPER-V • </span>
+            <span class="font-sans text-2xl md:text-5xl uppercase font-bold px-4 text-neo-blue">REACT • </span>
+            <span class="font-sans text-2xl md:text-5xl uppercase font-bold px-4">VUE JS • </span>
+        </div>
+    </div>
+
+    <section id="skills" class="py-12 md:py-20 px-4 container mx-auto max-w-7xl">
+        <div
+            class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 border-b-4 border-black pb-4 reveal">
+            <h2 class="text-4xl md:text-7xl font-sans uppercase">A Minha<br>Stack</h2>
+            <p class="font-mono text-base md:text-lg max-w-md mt-4 md:mt-0 md:text-right">
+                Meus conhecimentos em TI.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+            <div
+                class="reveal group bg-white border-4 border-black p-6 shadow-neo hover:shadow-neo-lg hover:-translate-x-1 hover:-translate-y-1 transition-all duration-200">
+                <div
+                    class="bg-neo-blue border-4 border-black w-12 h-12 md:w-14 md:h-14 flex items-center justify-center mb-6 group-hover:rotate-12 transition-transform">
+                    <i data-lucide="layout" class="w-6 h-6 md:w-8 md:h-8 text-white"></i>
+                </div>
+                <h3 class="font-sans text-xl md:text-2xl mb-4 uppercase">Desenvolvimento de Sites e Games</h3>
+                <p class="font-mono text-sm leading-relaxed mb-6">Landing pages e sites institucionais para nichos.</p>
+                <ul class="font-mono text-xs space-y-2 border-t-2 border-dashed border-gray-300 pt-4">
+                    <li>✓ React / Node.js/ Vue.js</li>
+                    <li>✓ Tailwind CSS</li>
+                </ul>
+            </div>
+
+            <div
+                class="reveal group bg-neo-lime border-4 border-black p-6 shadow-neo hover:shadow-neo-lg hover:-translate-x-1 hover:-translate-y-1 transition-all duration-200 delay-100 relative">
+                <div
+                    class="absolute -top-4 -right-4 bg-black text-white px-2 py-1 font-mono text-xs font-bold transform rotate-6">
+                    COM SEGURANÇA</div>
+                <div
+                    class="bg-white border-4 border-black w-12 h-12 md:w-14 md:h-14 flex items-center justify-center mb-6 group-hover:-rotate-12 transition-transform">
+                    <i data-lucide="server" class="w-6 h-6 md:w-8 md:h-8"></i>
+                </div>
+                <h3 class="font-sans text-xl md:text-2xl mb-4 uppercase">INFRAESTRUTURA / CLOUD</h3>
+                <p class="font-mono text-sm leading-relaxed mb-6">Planejo e Projeto sua Infraestrutura.
+                </p>
+                <ul class="font-mono text-xs space-y-2 border-t-2 border-dashed border-black pt-4">
+                    <li>✓ Windows Server / AD</li>
+                    <li>✓ Hyper-V / VMware</li>
+                    <li>✓ Azure</li>
+                </ul>
+            </div>
+
+            <div
+                class="reveal group bg-white border-4 border-black p-6 shadow-neo hover:shadow-neo-lg hover:-translate-x-1 hover:-translate-y-1 transition-all duration-200 delay-200">
+                <div
+                    class="bg-black border-4 border-black w-12 h-12 md:w-14 md:h-14 flex items-center justify-center mb-6 group-hover:rotate-12 transition-transform">
+                    <i data-lucide="bot" class="w-6 h-6 md:w-8 md:h-8 text-white"></i>
+                </div>
+                <h3 class="font-sans text-xl md:text-2xl mb-4 uppercase">IA & Automação</h3>
+                <p class="font-mono text-sm leading-relaxed mb-6">IAs de atendimento e automação de processos.</p>
+                <ul class="font-mono text-xs space-y-2 border-t-2 border-dashed border-gray-300 pt-4">
+                    <li>✓ Bash</li>
+                    <li>✓ PowerShell</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="projetos" class="py-12 md:py-20 bg-neo-black border-y-4 border-black text-white">
+        <div class="container mx-auto max-w-7xl px-4">
+            <h2
+                class="reveal text-4xl md:text-8xl font-sans uppercase mb-12 md:mb-16 text-center text-stroke-white hover:text-white transition-colors cursor-default">
+                Experiência
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+                                <a href="https://melodic-mooncake-88add3.netlify.app/" target="_blank" rel="noopener noreferrer" class="reveal group block">
+                    <div class="relative border-4 border-white h-64 md:h-80 overflow-hidden mb-4 bg-gray-800">
+                        <img src="../img/png-clipart-pokemon-ruby-and-sapphire-ash-ketchum-pokemon-heartgold-and-soulsilver-pokemon-gold-and-silver-pokedex-game-electronics-thumbnail.png  "
+                            class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500"
+                            alt="POKÉDEX">
+                        <div
+                            class="absolute top-4 left-4 bg-neo-blue text-white px-3 py-1 font-mono text-xs md:text-sm border-2 border-white">
+                            GAME</div>
+                    </div>
+                    <div class="flex justify-between items-end border-b-2 border-white pb-2">
+                        <h3 class="text-xl md:text-2xl font-sans">POKÉDEX</h3>
+                        <span class="font-mono text-sm md:text-base text-neo-lime">VUE.JS</span>
+                    </div>
+                </a>
+
+                <a href="https://daniloz-c.github.io/gamemario/" target="_blank" rel="noopener noreferrer" class="reveal group md:mt-16 block">
+                    <div class="relative border-4 border-white h-64 md:h-80 overflow-hidden mb-4 bg-gray-800">
+                        <img src="../img/OIP.jpg"
+                            class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500"
+                            alt="MARIO">
+                        <div
+                            class="absolute top-4 left-4 bg-neo-blue text-white px-3 py-1 font-mono text-xs md:text-sm border-2 border-white">
+                            GAME</div>
+                    </div>
+                    <div class="flex justify-between items-end border-b-2 border-white pb-2">
+                        <h3 class="text-xl md:text-2xl font-sans">MARIO</h3>
+                        <span class="font-mono text-sm md:text-base text-neo-lime">JAVASCRIPT</span>
+                    </div>
+                </a>
+
+                <div class="reveal group">
+                    <div class="relative border-4 border-white h-64 md:h-80 overflow-hidden mb-4 bg-gray-800">
+                        <img src="../img/Captura de tela 2026-07-27 215439.png"
+                            class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500"
+                            alt="Sites Diversos">
+                        <div
+                            class="absolute top-4 left-4 bg-white text-black px-3 py-1 font-mono text-xs md:text-sm border-2 border-black">
+                            WEB</div>
+                    </div>
+                    <div class="flex justify-between items-end border-b-2 border-white pb-2">
+                        <h3 class="text-xl md:text-2xl font-sans">SITE INSTITUCIONAL</h3>
+                        <span class="font-mono text-sm md:text-base text-neo-lime">WORDPRESS</span>
+                    </div>
+                </div>
+
+                <div
+                    class="reveal flex flex-col justify-center items-center text-center p-6 md:p-8 border-4 border-dashed border-gray-700 hover:border-neo-blue hover:bg-gray-900 transition-all group cursor-pointer col-span-1 md:col-span-2 mt-4 md:mt-8">
+                    <i data-lucide="github"
+                        class="w-12 h-12 md:w-16 md:h-16 mb-4 text-gray-500 group-hover:text-neo-blue transition-colors"></i>
+                    <h3 class="font-sans text-xl md:text-2xl mb-2">E MUITO MAIS NO GITHUB</h3>
+                    <a href="https://github.com/daniloz-c" target="_blank" rel="noopener noreferrer"
+                        class="bg-white text-black px-6 py-2 font-mono font-bold hover:bg-neo-blue hover:text-white transition-colors uppercase text-sm md:text-base">
+                        github.com/daniloz-c
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="artigos" class="py-12 md:py-20 px-4 container mx-auto max-w-7xl">
+        <div
+            class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 border-b-4 border-black pb-4 reveal">
+            <h2 class="text-4xl md:text-7xl font-sans uppercase">Artigos<br>Publicados</h2>
+            <p class="font-mono text-base md:text-lg max-w-md mt-4 md:mt-0 md:text-right">
+                Meus artigos.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+            <a href="../docs/OOB_AEO.pdf" target="_blank" rel="noopener noreferrer"
+                class="reveal group bg-white border-4 border-black p-6 shadow-neo hover:shadow-neo-lg hover:-translate-x-1 hover:-translate-y-1 transition-all duration-200 block">
+                <div
+                    class="bg-neo-lime border-4 border-black w-12 h-12 md:w-14 md:h-14 flex items-center justify-center mb-6 group-hover:rotate-12 transition-transform">
+                    <i data-lucide="newspaper" class="w-6 h-6 md:w-8 md:h-8"></i>
+                </div>
+                <h3 class="font-sans text-xl md:text-2xl mb-4 uppercase">ORIENTAÇÃO A OBJETOS NA MÁQUINA ENIGMA</h3>
+                <p class="font-mono text-sm leading-relaxed mb-6">
+                    Clique para ler.
+                </p>
+            </a>
+
+            <a href="../docs/AEO_SOA_v3 1.pdf" target="_blank" rel="noopener noreferrer"
+                class="reveal group bg-white border-4 border-black p-6 shadow-neo hover:shadow-neo-lg hover:-translate-x-1 hover:-translate-y-1 transition-all duration-200 block">
+                <div
+                    class="bg-neo-lime border-4 border-black w-12 h-12 md:w-14 md:h-14 flex items-center justify-center mb-6 group-hover:rotate-12 transition-transform">
+                    <i data-lucide="newspaper" class="w-6 h-6 md:w-8 md:h-8"></i>
+                </div>
+                <h3 class="font-sans text-xl md:text-2xl mb-4 uppercase">ARQUITETURA ORIENTADA A SERVIÇOS</h3>
+                <p class="font-mono text-sm leading-relaxed mb-6">
+                    Clique para ler.
+                </p>
+            </a>
+        </div>
+    </section>
+
+    <section id="podcasts" class="py-12 md:py-20 bg-black border-y-4 border-black text-white">
+        <div class="container mx-auto max-w-7xl px-4">
+            <div
+                class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 border-b-4 border-white pb-4 reveal">
+                <h2 class="text-4xl md:text-7xl font-sans uppercase">Podcasts</h2>
+                <p class="font-mono text-base md:text-lg max-w-md mt-4 md:mt-0 md:text-right">
+                    Espaço eu compartilhar em áudios as minhas Experiências com TI.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+
+                <div class="reveal bg-neo-blue text-black border-4 border-white p-6 shadow-neo">
+                    <div class="bg-white border-4 border-black p-4 md:p-5 mb-5">
+                        <p class="font-sans text-xl md:text-2xl uppercase mb-2">PILOTO</p>
+                        <p class="font-mono text-sm md:text-base mb-4">
+                            Quem é Danilo?
+                        </p>
+                        <audio controls class="w-full">
+                            <source src="../podcasts/Podcast%20Danilo%20v2.m4a" type="audio/mp4">
+                            Seu navegador não suporta reprodução de áudio.
+                        </audio>
+                    </div>
+                    <div class="flex items-center justify-between gap-4">
+                        <span class="font-mono text-xs md:text-sm uppercase">Podcast</span>
+                        <i data-lucide="headphones" class="w-6 h-6 md:w-8 md:h-8"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="py-12 md:py-24 px-4 container mx-auto max-w-5xl">
+        <div class="reveal bg-neo-blue border-4 border-black shadow-neo-lg relative overflow-hidden">
+            <div
+                class="absolute -right-20 -top-20 w-40 h-40 md:w-64 md:h-64 bg-neo-dark-blue rounded-full mix-blend-multiply filter blur-3xl opacity-50">
+            </div>
+            <div class="relative z-10 p-6 md:p-12 text-black">
+                <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-8">
+                    <div>
+                        <h2 class="text-4xl md:text-7xl font-sans uppercase leading-none">Fale comigo</h2>
+                    </div>
+                    <p class="font-mono text-sm md:text-base max-w-md md:text-right">
+                        Se quiser conversar sobre tecnologia, projetos ou oportunidades, me chama no LinkedIn.
+                    </p>
+                </div>
+
+                <a href="https://www.linkedin.com/in/danilo-c%C3%A9sar/" target="_blank" rel="noopener noreferrer"
+                    class="group flex flex-col md:flex-row md:items-center justify-between gap-4 bg-white border-4 border-black p-5 md:p-6 shadow-neo hover:shadow-neo-lg hover:-translate-x-1 hover:-translate-y-1 transition-all">
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-14 h-14 md:w-16 md:h-16 flex items-center justify-center bg-black text-white border-4 border-black group-hover:bg-neo-blue transition-colors">
+                            <i data-lucide="linkedin" class="w-7 h-7 md:w-8 md:h-8"></i>
+                        </div>
+                        <div>
+                            <p class="font-sans text-xl md:text-2xl uppercase">LinkedIn</p>
+                            <p class="font-mono text-sm md:text-base text-gray-600">danilo-cesar</p>
+                        </div>
+                    </div>
+
+                    <span
+                        class="inline-flex items-center gap-2 bg-black text-white px-4 py-2 font-mono font-bold uppercase text-sm md:text-base border-4 border-black group-hover:bg-neo-blue transition-colors">
+                        Abrir perfil
+                        <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-white border-t-4 border-black pt-12 pb-8 px-4 relative z-10">
+        <div class="container mx-auto max-w-7xl">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8 mb-12">
+                <div class="text-center md:text-left">
+                    <h2 class="text-3xl md:text-4xl font-sans mb-2">DANILO CÉSAR</h2>
+                    <p class="font-mono text-xs md:text-sm text-gray-500">Analista de TI</p>
+                </div>
+                <div class="flex gap-4">
+                    <p>meu currículo :)</p>
+                    <a href="../docs/Curriculo%20Danilo.pdf" target="_blank" rel="noopener noreferrer"
+                        class="btn-brutal w-12 h-12 border-4 border-black flex items-center justify-center hover:bg-neo-blue hover:text-white shadow-neo">
+                        <i data-lucide="file-text" class="w-6 h-6"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div
+                class="border-t-4 border-black pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] md:text-xs font-mono uppercase text-center md:text-left">
+                <p>&copy; 2026 Danilo César. Todos os direitos reservados.</p>
+                <p>Feito no Brasil 🇧🇷</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+
+</html>
